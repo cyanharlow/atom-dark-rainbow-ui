@@ -1,58 +1,86 @@
-
 // Lists
-// -------------------
-
-// Used in different places, like the Tree View, Commmand Palette etc.
-// Overrides: atom/static/lists.less
-
 // List Group -------------------
+
 .list-group {
-  li {
-    padding-left: @component-padding/2;
+    li {
+        padding-left: @component-padding/2;
+        // We want to highlight the background of the list items because we dont know their size.
+        &.selected {
+            color: @text-color-selected;
+            background-color: @background-color-selected;
 
-    // We want to highlight the background of the list items because we dont know their size.
-    &.selected {
-      color: @text-color-selected;
-      background-color: @background-color-selected;
-      &:before{ display: none; }
+            &:before {
+                display: none;
+            }
+        }
     }
-  }
 }
-
-
 // List Tree -------------------
+
 .list-tree {
-  .selected {
-    color: @text-color-selected;
-  }
+    .selected {
+        color: @text-color-selected;
+    }
 }
-
-
 // Select List -------------------
+
 .select-list {
-  li {
-    padding: @component-padding/2 @component-padding;
-  }
-  .status {
-    float: right;
-  }
+    li {
+        padding: @component-padding/2 @component-padding;
+    }
+
+    .status {
+        float: right;
+    }
 }
-
-
 // Popover List -------------------
 // Used as a popover for something like autocomplete.
+
 .select-list.popover-list {
-  @popover-list-padding: @component-padding/2;
+    @popover-list-padding: @component-padding/2;
+    padding: @popover-list-padding;
+    padding
+    background-color: @overlay-background-color;
+    box-shadow: 4px 4px 8px 4px fade(black, 80%);
 
-  padding: @popover-list-padding;
-  border-radius: @component-border-radius;
-  background-color: @overlay-background-color;
-  box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+    .list-group {
+        margin-top: @popover-list-padding;
 
-  .list-group {
-    margin-top: @popover-list-padding;
-    li {
-      padding-left: @popover-list-padding;
+        li {
+            padding-left: @popover-list-padding;
+
+            &:nth-of-type(n) {
+                background: desaturate(@red, 20%);
+            }
+
+            &:nth-of-type(7n-5) {
+                background: desaturate(@orange, 20%);
+            }
+
+            &:nth-of-type(7n-4) {
+                background: desaturate(@yellow, 20%);
+            }
+
+            &:nth-of-type(7n-3) {
+                background: desaturate(@green, 20%);
+            }
+
+            &:nth-of-type(7n-2) {
+                background: desaturate(@blue, 20%);
+            }
+
+            &:nth-of-type(7n-1) {
+                background: desaturate(@purple, 20%);
+            }
+
+            &:nth-of-type(7n) {
+                background: desaturate(@pink, 20%);
+            }
+
+            &:focus,
+            &:hover {
+                background: black;
+            }
+        }
     }
-  }
 }
