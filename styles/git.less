@@ -122,3 +122,24 @@
     }
 
 }
+
+.github-PrInfo {
+    .meta-info,
+    .conversation,
+    .commit-count,
+    .file-count,
+    .reactions,
+    .labels {
+        border: 0;
+        padding: 10px 14px;
+        background: none;
+
+        &:nth-of-type(odd) {
+            background-color: lighten(@app-background-color, 11%);
+        }
+        &:empty{
+            background-color: transparent !important;
+            background: none !important;
+        }
+    }
+}
