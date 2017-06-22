@@ -1,0 +1,53 @@
+// Base
+// -------------------
+// Used for global styles Or to override certain Atom core styles
+// -------------------
+
+::-webkit-scrollbar {
+    background: @app-background-color;
+    &-corner {
+        background: @app-background-color;
+    }
+    &-thumb {
+        background: lighten(@app-background-color, 10%);
+    }
+}
+body {
+    font-size: @font-size;
+    color: @text-color;
+
+    a {
+        color: lighten(@pink, 10%);
+
+        &:hover {
+            color: @pink;
+        }
+    }
+
+    atom-notifications {
+        z-index: 9999999999999999;
+    }
+
+    atom-workspace {
+        background-color: @outer-atom-background;
+        padding: 20px;
+
+        .item-views,
+        atom-panel,
+        atom-panel-container {
+            border: 0 !important;
+
+        }
+
+        code {
+            background-color: lighten(@gray, 20%);
+        }
+
+        span {
+            color: lighten(@gray, 80%);
+            &.badge {
+                background-color: lighten(@gray, 20%);
+            }
+        }
+    }
+}

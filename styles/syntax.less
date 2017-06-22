@@ -1,0 +1,71 @@
+// syntax for code editor
+
+span {
+
+    color: lighten(@gray, 80%);
+
+    &.syntax--variable {
+        color: lighten(@red, 23%);
+
+        &.syntax--object.syntax--property {
+            color: lighten(@red, 35%);
+        }
+    }
+
+    &.syntax--meta.syntax--delimiter.syntax--property.syntax--period.syntax--js + span.syntax--variable {
+        color: lighten(@red, 35%);
+    }
+
+    &.syntax--constant,
+    &.syntax--entity.syntax--other.syntax--attribute-name {
+        color: lighten(@orange, 20%);
+    }
+
+    &.syntax--storage {
+        color: lighten(@purple, 37%);
+    }
+
+    &.syntax--string {
+        color: lighten(@green, 43%);
+    }
+
+    &.syntax--meta.syntax--method-call,
+    .syntax--meta.syntax--method {
+        color: lighten(@gray, 60%);
+    }
+
+    &.syntax--entity.syntax--name.syntax--function,
+    &.syntax--id {
+        color: lighten(@blue, 25%);
+    }
+
+    &.syntax--support.syntax--function {
+        color: lighten(@teal, 15%);
+    }
+
+    &.syntax--punctuation.syntax--string,
+    &.syntax--source.syntax--css .syntax--property-name.syntax--support,
+    &.syntax--source.syntax--css .syntax--property-value.syntax--support {
+        color: lighten(@gray, 70%);
+    }
+
+    &.syntax--comment {
+        color: lighten(@gray, 20%);
+    }
+
+    &.leading-whitespace,
+    .trailing-whitespace {
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            left: 0.15em;
+            bottom: -0.15em;
+            top: -0.15em;
+            background-image: repeating-linear-gradient(to right, transparent, transparent 2.1em, rgba(255, 255, 255, 0.15) 2.21em);
+        }
+    }
+}

@@ -1,0 +1,73 @@
+// Status Bar
+
+.footer {
+    padding-top: 10px;
+    background: none;
+    background-color: transparent;
+}
+
+.status-bar {
+    padding-top: 8px;
+    font-size: @font-size;
+    color: @text-color;
+
+    .status-bar-left {
+        flex: auto;
+    }
+
+    .status-bar-right {
+        .github-PushPull {
+            padding: 0 10px;
+            margin-right: 10px;
+
+            .github-PushPull-icon {
+                display: none;
+            }
+
+            .github-PushPull-label {
+                margin: 0;
+            }
+
+            .is-pull,
+            .is-push {
+                &:before {
+                    font-family: 'Octicons Regular';
+                    font-weight: normal;
+                    font-style: normal;
+                    display: inline-block;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    text-decoration: none;
+                    font-size: 16px;
+                    margin: 0 4px 0 0;
+                }
+
+                &:not(:empty) {
+                    margin: 0 8px;
+                    padding: 0 4px;
+                    outline-offset: -1px;
+                    outline-style: solid;
+                    outline-width: 4px;
+                    outline-color: black;
+                    background: black;
+                    color: @pink;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: @pink;
+                        color: black;
+                        outline-color: @pink;
+                    }
+                }
+            }
+
+            .is-pull:before {
+                content: "\f03f";
+            }
+
+            .is-push:before {
+                content: "\f03d";
+            }
+        }
+    }
+}

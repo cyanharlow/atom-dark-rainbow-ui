@@ -1,0 +1,59 @@
+// Buttons
+// -------------------
+// Overrides: atom/atom/static/buttons.less
+.btn-group {
+    margin: 0;
+}
+button {
+    &.btn {
+        height: auto;
+        background-image: none;
+        border-radius: 50px;
+        color: white;
+    }
+}
+
+// Colored buttons -----------------------
+.btn.btn-primary {
+    .btn-color(@pink);
+}
+
+.btn.btn-info {
+    .btn-color(@background-color-info);
+}
+
+.btn.btn-success {
+    .btn-color(@background-color-success);
+}
+
+.btn.btn-warning {
+    .btn-color(@background-color-warning);
+}
+
+.btn.btn-error {
+    .btn-color(@background-color-error);
+}
+
+.btn-color(@bg) {
+    color: @text-color-selected;
+    background-color: @bg;
+
+    &:focus,
+    &:hover {
+        background-color: lighten(@bg, 4%);
+    }
+
+    &:active {
+        background-color: darken(@bg, 4%);
+    }
+
+    &.selected {
+        background-color: lighten(@bg, 4%);
+    }
+
+    &.selected:focus,
+    &.selected:hover {
+        background-color: lighten(@bg, 8%);
+    }
+}
+// Button Group -----------------------

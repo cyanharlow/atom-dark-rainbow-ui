@@ -1,0 +1,72 @@
+
+// Find + Replace
+// -------------------
+
+// Find and replace in the current buffer or across the entire project.
+// Overrides: atom/find-and-replace
+.find-and-replace, .project-find {
+    padding: 0;
+    .input-block {
+        // background: darken(@gray, 10%);
+        margin-top: 20px;
+        .input-block-item {
+            padding: 0;
+        }
+        .btn {
+            padding: 3px 15px;
+            height: auto;
+            border-radius: 0;
+            line-height: 1;
+        }
+    }
+    .btn:before {
+        font-family: 'Octicons Regular';
+        padding-right: 8px;
+        line-height: 14px;
+    }
+    .btn-group {
+        margin: 0;
+        &:last-child {
+            > .btn {
+                border-radius: 0 40px 40px 0;
+            }
+        }
+        & + .btn-group {
+            margin-left: 0;
+            opacity: 0.8;
+        }
+    }
+    .btn-group-find {
+        > .btn {
+            &:before {
+                content: "\f02e";
+            }
+        }
+    }
+    .btn-group-find-all {
+        > .btn {
+            &:before {
+                content: "\f02e  \f104";
+            }
+        }
+    }
+    .btn-group-replace {
+        > .btn {
+            &:before {
+                content: "\f105";
+            }
+        }
+    }
+    .btn-group-replace-all {
+        > .btn {
+            &:before {
+                content: "\f105  \f104";
+            }
+        }
+    }
+    .find-container, .replace-container {
+        .editor {
+            border-radius: 40px 0 0 40px;
+        }
+    }
+}

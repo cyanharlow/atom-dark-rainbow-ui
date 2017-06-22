@@ -1,0 +1,47 @@
+// Tooltips
+
+div.tooltip {
+    z-index: 999999999999;
+    &.in {
+        opacity: 1;
+    }
+
+    &.top {
+        .tooltip-arrow {
+            border-top-color: @pink !important;
+        }
+    }
+
+    &.bottom {
+        .tooltip-arrow {
+            border-bottom-color: @pink !important;
+        }
+    }
+
+    &.right {
+        .tooltip-arrow {
+            border-right-color: @pink !important;
+        }
+    }
+
+    &.left {
+        .tooltip-arrow {
+            border-left-color: @pink !important;
+        }
+    }
+    .tooltip-inner {
+        color: #fff;
+        background: @pink;
+        line-height: 1;
+        padding: 0.75em;
+        white-space: nowrap;
+        max-width: none;
+    }
+    .keystroke {
+        padding: 0.15em 0.4em;
+        margin: 0 -.3em 0 0.25em;
+        border-radius: max(2px, @component-border-radius / 2);
+        color: @text-color-selected;
+        background: @background-color-selected;
+    }
+}

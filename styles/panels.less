@@ -1,0 +1,93 @@
+// Panels
+
+.welcome {
+    background-color: transparent;
+    background: none;
+}
+
+.panel,
+.tool-panel,
+atom-panel {
+    background-color: transparent;
+    background: none;
+}
+
+.panel-heading {
+    border-bottom: 1px solid @panel-heading-border-color;
+    background-color: @panel-heading-background-color;
+}
+
+.inset-panel {
+    background-color: @inset-panel-background-color;
+
+    .panel-heading {
+        background-color: lighten(@inset-panel-background-color, 4%);
+    }
+}
+
+.atom-dock-resize-handle {
+    &:active,
+    &:focus,
+    &:hover {
+        background: @app-background-color;
+    }
+}
+
+.atom-dock-toggle-button {
+    &.right {
+        margin-right: -4px;
+    }
+
+    &.left {
+        margin-left: -4px;
+    }
+}
+
+header {
+    padding: 10px 5px;
+}
+// Modal -------------------
+// Used on top of the editor, like the Command Palette.
+
+atom-panel.modal {
+    border: 1px solid @overlay-border-color;
+    border-top: none;
+    box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+}
+
+.overlay,
+atom-panel.modal {
+    background-color: lighten(@app-background-color, 20%);
+}
+
+atom-panel-container.left {
+    padding-right: 30px;
+}
+
+atom-panel-container.right {
+    padding-left: 30px;
+}
+
+.panels {
+    background-color: @app-background-color;
+}
+
+.atom-dock-mask {
+    background-color: transparent;
+    background: none;
+}
+
+.item-views {
+    background-color: @app-background-color;
+    border-radius: 0 0 30px 30px;
+}
+
+atom-pane-container atom-pane .item-views .pane-item {
+    background-color: @outer-atom-background;
+}
+
+atom-notification .description {
+    font-size: 0.8em;
+    max-height: 300px;
+    overflow: auto;
+}

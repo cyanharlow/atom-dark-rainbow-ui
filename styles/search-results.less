@@ -1,0 +1,168 @@
+// project view search results
+.preview-pane .preview-header {
+    background-color: transparent;
+    background: none;
+    border-bottom: 0;
+}
+
+
+.preview-pane .results-view {
+    padding: 0;
+
+    li.selected {
+        &:before {
+            background: none;
+        }
+    }
+
+    ol.list-tree.has-collapsable-children {
+        padding: 0;
+        > div {
+            background: darken(@gray, 5%);
+            outline: 5px solid @outer-atom-background;
+            padding: 0 4px;
+
+            ol.matches {
+                > li {
+                    line-height: 1;
+                }
+            }
+
+            &:nth-of-type(n) {
+                .icon {
+                    color: lighten(@red, 20%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@red, 20%);
+                }
+            }
+
+            &:nth-of-type(7n-5) {
+                .icon {
+                    color: lighten(@orange, 20%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@orange, 20%);
+                }
+            }
+
+            &:nth-of-type(7n-4) {
+                .icon {
+                    color: lighten(@yellow, 20%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@yellow, 20%);
+                }
+            }
+
+            &:nth-of-type(7n-3) {
+                .icon {
+                    color: lighten(@green, 20%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@green, 20%);
+                }
+            }
+
+            &:nth-of-type(7n-2) {
+                .icon {
+                    color: lighten(@blue, 20%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@blue, 20%);
+                }
+            }
+
+            &:nth-of-type(7n-1) {
+                .icon {
+                    color: lighten(@purple, 20%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@purple, 20%);
+                }
+            }
+            &:nth-of-type(7n) {
+                .icon {
+                    color: lighten(@pink, 10%);
+                }
+
+                .match,
+                .replacement {
+                    background-color: lighten(@pink, 10%);
+                }
+            }
+        }
+    }
+    .list-nested-item {
+
+        .preview {
+            font-family: 'Lucida Console';
+        }
+
+        li:hover {
+            background: lighten(@gray, 3%);
+            cursor: pointer;
+        }
+
+        .highlight-error,
+        .highlight-info,
+        .highlight-success {
+            padding: 0;
+        }
+
+        .match,
+        .replacement {
+            color: #000;
+            border-radius: 0;
+            box-shadow: none !important;
+        }
+
+        .highlight-error {
+            -webkit-filter: invert(30%) saturate(50%);
+        }
+
+        .line-number {
+            margin-right: 5ex;
+        }
+
+        .path-details.list-item {
+            display: block;
+            clear: both;
+
+            &:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .icon {
+                &:after {
+                    content: attr(data-name);
+                    font-size: 15px;
+                    padding-right: 9px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .path-name {
+                // display: block;
+                color: lighten(@gray, 30%);
+                clear: left;
+            }
+        }
+
+    }
+}

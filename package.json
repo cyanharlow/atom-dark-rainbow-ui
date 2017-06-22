@@ -1,0 +1,15 @@
+{
+  "name": "atom-dark-rainbow-ui",
+  "theme": "ui",
+  "version": "0.0.0",
+  "description": "70s rainbow colors",
+  "keywords": [
+    "ui",
+    "theme"
+  ],
+  "repository": "https://github.com/atom-community/ui-theme-template",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

@@ -1,0 +1,243 @@
+// Tree View
+
+.tree-view-resizer {
+    border-right: 1px solid @base-border-color;
+}
+
+.tree-view {
+    color: @text-color;
+    background-color: @tree-view-background-color;
+
+    .list-item.selected {
+        color: @text-color-selected;
+    }
+}
+// rainbow project file tree view
+
+.tree-view .list-tree {
+    font-size: 13px;
+    padding-right: 0;
+
+    .header.list-item {
+        padding-left: 15px;
+
+        &:before {
+            color: #fff;
+            z-index: 9;
+        }
+    }
+
+    .header.list-item,
+    li {
+        position: relative;
+        padding: 0;
+        vertical-align: middle;
+        background: #000;
+
+        span {
+            color: #fff !important;
+            line-height: 3 !important;
+            vertical-align: middle;
+            z-index: 6;
+        }
+
+        .icon:before {
+            vertical-align: middle;
+        }
+    }
+
+    li {
+        &:before {
+            bottom: 0;
+            top: 0;
+            z-index: 3;
+            min-height: 50px;
+            height: auto;
+            left: -100%;
+            position: absolute;
+            width: 200%;
+            text-indent: 8px;
+            color: #000;
+            line-height: 30px;
+        }
+
+        span {
+            position: relative;
+        }
+
+        &.collapsed {}
+    }
+
+    > li {
+        &:before {
+            background-color: desaturate(@pink, 20%);
+        }
+
+        &:nth-of-type(even):before {
+            background-color: desaturate(darken(@pink, 8%), 20%);
+        }
+    }
+
+    > .list-nested-item {
+        // red
+        > ol.entries > li {
+            &:before {
+                background-color: desaturate(@red, 20%);
+            }
+
+            &:nth-of-type(even):before {
+                background-color: desaturate(darken(@red, 5%), 20%);
+            }
+        }
+        // orange
+        > ol.entries.list-tree > li {
+           > ol.entries > li {
+                &:before {
+                    background-color: desaturate(@orange, 20%);
+                }
+
+                &:nth-of-type(even):before {
+                    background-color: desaturate(darken(@orange, 5%), 20%);
+                }
+            }
+            // yellow
+           > ol.entries.list-tree > li {
+               > ol.entries > li {
+                    &:before {
+                        background-color: desaturate(@yellow, 20%);
+                    }
+
+                    &:nth-of-type(even):before {
+                        background-color: desaturate(darken(@yellow, 5%), 20%);
+                    }
+                }
+                // green
+               > ol.entries.list-tree > li {
+                   > ol.entries > li {
+                        &:before {
+                            background-color: desaturate(@green, 20%);
+                        }
+
+                        &:nth-of-type(even):before {
+                            background-color: desaturate(darken(@green, 5%), 20%);
+                        }
+                    }
+                    // blue
+                   > ol.entries.list-tree > li {
+                       > ol.entries > li {
+                            &:before {
+                                background-color: desaturate(@blue, 20%);
+                            }
+
+                            &:nth-of-type(even):before {
+                                background-color: desaturate(darken(@blue, 5%), 20%);
+                            }
+                        }
+                        // purple
+                       > ol.entries.list-tree > li {
+                           > ol.entries > li {
+                                &:before {
+                                    background-color: desaturate(@purple, 20%);
+                                }
+
+                                &:nth-of-type(even):before {
+                                    background-color: desaturate(darken(@purple, 5%), 20%);
+                                }
+                            }
+                            // pink
+                           > ol.entries.list-tree > li {
+                               > ol.entries > li {
+                                    &:before {
+                                        background-color: desaturate(darken(@pink, 5%), 20%);
+                                    }
+
+                                    &:nth-of-type(even):before {
+                                        background-color: desaturate(darken(@pink, 10%), 20%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    li.directory.expanded > .header > span:before,
+    li.expanded > .header > span.icon-file-directory:before,
+    li.file.selected > span:before {
+        transform: rotateZ(30deg);
+    }
+
+    li.directory.selected:before {
+        outline-width: 48px;
+        outline-style: solid;
+        outline-color: black;
+        outline-offset: -48px;
+    }
+
+    li.directory.selected:before {
+        outline-color: rgba(0,0,0,0.4);
+    }
+
+    .list-tree > li.selected {
+        &.file:before {
+            background-color: @gray !important;
+        }
+    }
+
+    span.icon.icon-file-text {
+        font-family: 'Lucida Console', monospace;
+    }
+
+    span.icon-file-directory {
+        vertical-align: middle;
+        font-weight: bold;
+        font-family: 'Gadugi';
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    span.icon {
+        &:before {
+            color: #fff;
+            border-radius: 50%;
+            border-color: transparent;
+            border-width: 2px;
+            border-style: solid;
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            text-align: center;
+            display: inline-block;
+            line-height: 1.3;
+            box-sizing: border-box;
+        }
+    }
+    .status-added > span.icon-file-text,
+    li.status-added > .header > span.icon-file-directory,
+    .status-modified > span.icon-file-text,
+    li.status-modified > .header > span.icon-file-directory {
+        text-decoration: underline;
+        font-size: 110%;
+        position: relative;
+    }
+
+
+    .status-modified > span.icon-file-text,
+    li.status-modified > .header > span.icon-file-directory {
+        &:before {
+            background: lighten(@blue, 20%);
+            color: darken(@blue, 20%);
+            border-color: inherit;
+        }
+    }
+    .status-added > span.icon-file-text,
+    li.status-added > .header > span.icon-file-directory {
+        &:before {
+            background: lighten(@green, 30%);
+            color: darken(@green, 10%);
+            border-color: inherit;
+        }
+    }
+}

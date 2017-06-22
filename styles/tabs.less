@@ -1,0 +1,167 @@
+// Tabs
+
+atom-pane .tab-bar .tab {
+    transition: margin-top 0.5s 1;
+}
+
+.tab-bar {
+    padding-top: 14px;
+    background-color: transparent;
+    background: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .tab {
+        margin-top: 0;
+        min-width: 100px;
+        border-radius: 20px 20px 0 0;
+
+        &[data-type="ResultsPaneView"] {
+            background: white !important;
+            max-width: 200px;
+            width: 140px;
+
+            > .title {
+                color: black !important;
+            }
+
+            &:before {
+                background: white !important;
+            }
+
+            .close-icon {
+                color: black !important;
+            }
+        }
+
+        &:not(.active) {
+            color: rgba(255,255,255,0.7);
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                border-radius: inherit;
+                background: rgba(0,0,0,0.6);
+            }
+        }
+
+        &:nth-of-type(n) {
+            background: desaturate(@red, 20%);
+            color: desaturate(@red, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@red, 20%);
+            }
+        }
+
+        &:nth-of-type(7n-5) {
+            background: desaturate(@orange, 20%);
+            color: desaturate(@orange, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@orange, 20%);
+            }
+        }
+
+        &:nth-of-type(7n-4) {
+            background: desaturate(@yellow, 20%);
+            color: desaturate(@yellow, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@yellow, 20%);
+            }
+        }
+
+        &:nth-of-type(7n-3) {
+            background: desaturate(@green, 20%);
+            color: desaturate(@green, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@green, 20%);
+            }
+        }
+
+        &:nth-of-type(7n-2) {
+            background: desaturate(@blue, 20%);
+            color: desaturate(@blue, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@blue, 20%);
+            }
+        }
+
+        &:nth-of-type(7n-1) {
+            background: desaturate(@purple, 20%);
+            color: desaturate(@purple, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@purple, 20%);
+            }
+        }
+
+        &:nth-of-type(7n) {
+            background: desaturate(@pink, 20%);
+            color: desaturate(@pink, 20%);
+
+            .close-icon:hover {
+                color: desaturate(@pink, 20%);
+            }
+        }
+
+        &.active {
+             > .title,
+            > .close-icon {
+                color: #fff;
+            }
+
+            &:not(:only-child) {
+                box-shadow: 0 -13px 0 0;
+            }
+        }
+
+        > .title {
+            font-family: 'Consolas';
+            color: rgba(255,255,255,0.7);
+            padding: 15px 0;
+            position: relative;
+            background-color: transparent !important;
+        }
+
+        .close-icon {
+            z-index: 22;
+            height: 25px;
+            width: 25px;
+            text-align: center;
+            line-height: 25px;
+            color: rgba(255,255,255,0.7);
+            top: 10px;
+            right: 4px;
+
+            &:hover {
+                border-radius: 50%;
+                background-color: white;
+            }
+        }
+        // Modified Icon (the blue circle) -------------------
+        &.modified:not(:hover) .close-icon {
+            top: 20px;
+            right: 12px;
+            margin-top: -3px;
+        }
+        // Dragging -------------------
+        // Styles get applied while dragging a tab
+        &.is-dragging {
+            background: darken(@tab-background-color, 10%);
+            border-color: transparent;
+            opacity: 0.5;
+
+            & .close-icon {
+                visibility: hidden;
+            }
+        }
+    }
+}

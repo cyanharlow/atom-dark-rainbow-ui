@@ -1,0 +1,251 @@
+// Mini Editor
+// -------------------
+// Mini Editors are the "text inputs" used in find+replace or in the settings.
+
+atom-text-editor.editor.mini {
+    background-image: none;
+    border: 0 !important;
+    padding: 8px 18px;
+    margin: 0;
+    background-color: lighten(@app-background-color, 5%);
+
+    &.is-focused {
+        border: 0;
+        z-index: 99999;
+        background-color: @app-background-color;
+        box-shadow: none !important;
+    }
+    max-height: 50px;
+}
+
+.options-label {
+    .btn-toggle .btn {
+        margin-left: 8px;
+        background: none;
+        height: 35px;
+        border-radius: 50% !important;
+        overflow: hidden;
+        vertical-align: top;
+
+        &.selected {
+            background: @pink;
+        }
+
+        &:hover {
+            background: lighten(@gray, 20%);
+        }
+    }
+}
+
+atom-text-editor.editor {
+    overflow: hidden;
+    background-color: @app-background-color;
+
+    &:not(.mini) {
+        .scroll-view {
+            // padding-left: 20px;
+        }
+    }
+
+    .cursor {
+        border-color: lighten(@green, 40%);
+    }
+
+    .scroll-view {
+        background: transparent !important;
+        overflow: visible;
+        .lines {
+            background: transparent !important;
+            > div > div {
+                background: transparent !important;
+            }
+        }
+        .line {
+            position: relative;
+        }
+
+        .cursor-line {
+            position: relative;
+            background-color: transparent;
+            background: none;
+            // &:before {
+            //     content: "";
+            //     display: block;
+            //     position: absolute;
+            //     left: -29px;
+            //     top: 0;
+            //     bottom: 0;
+            //     right: 0;
+            //     background: darken(@gray, 60%);
+            //     z-index: -1;
+            // }
+        }
+
+        .fold-marker {
+            & ~ span {
+                opacity: 0.5;
+            }
+
+            &:after {
+                font-size: 2em;
+                position: absolute;
+                line-height: 0.8;
+                color: @blue;
+            }
+        }
+    }
+
+    .highlights {
+        .highlight.bracket-matcher {
+            z-index: 888888;
+            position: relative;
+
+            .region.bracket-matcher {
+                border: 0;
+                outline: 2px solid @yellow;
+                outline-offset: -1px;
+                &:after {
+                    content: "\27a1";
+                    display: block;
+                    z-index: 888888888888888888888888888888888888;
+                    position: fixed;
+                    color: @yellow;
+                    left: -1.4em;
+                    font-size: 169%;
+                    vertical-align: top;
+                    line-height: 82%;
+                }
+            }
+            // &:only-child .region.bracket-matcher {
+            .region.bracket-matcher {}
+        }
+    }
+
+    .selection .region {
+        background-color: #000;
+        background-attachment: fixed;
+        background-position: left top;
+        background-image: repeating-linear-gradient(to right, darken(@red, 20%), darken(@orange, 25%), darken(@yellow, 31%), darken(@green, 15%), darken(@blue, 25%), darken(@purple, 15%), darken(@pink, 45%), darken(@red, 20%) 700px);
+    }
+}
+
+.gutter-container {
+    overflow: visible;
+    position: relative;
+
+    .gutter {
+        overflow: visible;
+        background: @app-background-color;
+
+        .line-numbers {
+            > div {
+                background: @app-background-color !important;
+            }
+
+            .line-number {
+                font-family: 'Consolas';
+                border-left: 0;
+                border-right: 0;
+                padding-left: 4px;
+                padding-right: 25px;
+                opacity: 1;
+
+                .icon-right {
+                    // opacity: 1;
+                    // visibility: visible;
+                }
+
+                &.git-line-added,
+                &.git-line-modified {
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        margin-left: -5px;
+                        border-left: 5px solid transparent;
+                        height: 100%;
+                        width: 3000px;
+                        left: 100%;
+                        top: 0;
+                        pointer-events: none;
+                    }
+                }
+
+                &.git-line-removed {
+                    &:before {
+                        left: 100%;
+                        border-left-color: @red;
+                    }
+                    &:after {
+                        left: 100%;
+                        width: 3000px;
+                        border-bottom: 1px dashed @red;
+                    }
+                }
+
+                &.git-line-added {
+                    &:after {
+                        border-color: lighten(@green, 10%);
+                        background: darken(@green, 15%);
+                    }
+                }
+
+                &.git-line-modified {
+                    &:after {
+                        border-color: lighten(@blue, 10%);
+                        background: darken(@blue, 20%);
+                    }
+                }
+
+                &.cursor-line {
+                    background: @app-background-color;
+                    &.cursor-line-no-selection {
+                        background: black;
+                        font-weight: bold;
+                    }
+                }
+
+                &:nth-of-type(n) {
+                    color: @red;
+                }
+
+                &:nth-of-type(6n-4) {
+                    color: @orange;
+                }
+
+                &:nth-of-type(6n-3) {
+                    color: @yellow;
+                }
+
+                &:nth-of-type(6n-2) {
+                    color: @green;
+                }
+
+                &:nth-of-type(6n-1) {
+                    color: @blue;
+                }
+
+                &:nth-of-type(6n) {
+                    color: lighten(@purple, 10%);
+                }
+
+                &.foldable {
+                    .icon-right {
+                        opacity: 0.3;
+                        visibility: visible;
+                    }
+
+                    &.folded {
+                        .icon-right {
+                            opacity: 1;
+
+                            &:before {
+                                content: "\f05a";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

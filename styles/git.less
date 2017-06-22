@@ -1,0 +1,124 @@
+// Git
+// -------------------
+
+// Used to color git status
+
+.status          { color: @text-color; }
+.status-added    { color: @text-color-success; } // green
+.status-ignored  { color: @text-color-subtle; }  // faded
+.status-modified { color: @text-color-warning; } // orange
+.status-removed  { color: @text-color-error; }   // red
+.status-renamed  { color: @text-color-info; }    // blue
+
+.github-CommitView {
+    background-color: @outer-atom-background;
+    .github-CommitView-editor {
+        background-color: transparent;
+        background: none;
+        border: 0;
+        padding: 0;
+        .editor {
+            padding: 10px 20px;
+            border-radius: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.github-StagingView {
+    &:focus {
+        .github-StagingView-group {
+            &.is-focused {
+                 .is-selected {
+                     background: @pink;
+                 }
+            }
+
+        }
+    }
+    .github-StagingView-group {
+        &.is-focused {
+            .is-selected {
+                background: fade(white, 20%);
+            }
+        }
+        &.github-StagedChanges {
+            background: darken(@blue, 30%);
+            header {
+                background: @blue;
+            }
+        }
+        &.github-UnstagedChanges  {
+            background: #333;
+            header {
+                background: #666;
+            }
+        }
+
+    }
+
+}
+
+
+.github-FilePatchView {
+
+    &:focus {
+        .github-HunkView.is-selected.is-hunkMode {
+            .github-HunkView-header,
+            .github-HunkView-title {
+                background: black;
+                color: inherit;
+            }
+        }
+    }
+    .github-HunkView-line {
+        &.is-selected {
+            background: black;
+            &.is-deleted {
+                .github-HunkView-lineNumber {
+                    background: @red;
+                }
+            }
+            &.is-added {
+                .github-HunkView-lineNumber {
+                    background: @green;
+                }
+            }
+            &.is-modified {
+                .github-HunkView-lineNumber {
+                    background: @blue;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+.github-HunkView {
+    border-bottom: 15px solid @outer-atom-background;
+}
+
+.github-StatusBarTileController-tooltipMenu {
+    &.in {
+        opacity: 1;
+    }
+    .github-PushPullMenuView .icon-mark-github::before {
+        color: white;
+    }
+    .tooltip-inner.tooltip-inner, .tooltip-arrow.tooltip-arrow {
+        background-color: @pink !important;
+        border-color: @pink;
+        .btn {
+            background-color: black;
+            &.github-PushPullMenuView-push {
+                border-left: 3px solid @pink;
+            }
+            &:hover {
+                background: #333;
+            }
+        }
+    }
+
+}
