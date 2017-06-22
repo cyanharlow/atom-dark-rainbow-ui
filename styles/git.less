@@ -40,15 +40,15 @@
             }
         }
         &.github-StagedChanges {
-            background: lighten(black, 10%);
+            background: @app-background-color;
             header {
-                background: black;
+                background: darken(@app-background-color, 20%);
             }
         }
         &.github-UnstagedChanges  {
-            background: #555;
+            background: lighten(@app-background-color, 24%);
             header {
-                background: #666;
+                background: lighten(@app-background-color, 22%);
             }
         }
     }
