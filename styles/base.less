@@ -2,6 +2,9 @@
 // -------------------
 // Used for global styles Or to override certain Atom core styles
 // -------------------
+::-webkit-input-placeholder {
+    color: fade(white, 40%) !important;
+}
 
 ::-webkit-scrollbar {
     background: @app-background-color;
@@ -22,6 +25,11 @@ body {
         &:hover {
             color: @pink;
         }
+    }
+
+    .input-text {
+        border: 0;
+        background-color: @outer-atom-background;
     }
 
     atom-notifications {

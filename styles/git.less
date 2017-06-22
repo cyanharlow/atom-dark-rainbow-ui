@@ -1,7 +1,4 @@
 // Git
-// -------------------
-
-// Used to color git status
 
 .status          { color: @text-color; }
 .status-added    { color: @text-color-success; } // green
@@ -123,6 +120,55 @@
 
 }
 
+.github-PrPaneItem {
+    padding: 30px 0;
+    .github-PrPaneItem-container {
+        max-width: 100%;
+        .issueish-avatar-and-title {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom: 0;
+        }
+        .issueish-badge-and-link, .issueish-avatar-and-title, .github-DotComMarkdownHtml {
+            margin: 0 30px 20px;
+        }
+        .github-PrTimeline {
+            > * {
+                margin: 0;
+                padding: 30px 30px 30px 50px;
+                border-bottom: 0;
+                &:nth-of-type(n) {
+                    background: desaturate(@red, 20%);
+                }
+
+                &:nth-of-type(7n-5) {
+                    background: desaturate(@orange, 20%);
+                }
+
+                &:nth-of-type(7n-4) {
+                    background: desaturate(@yellow, 20%);
+                }
+
+                &:nth-of-type(7n-3) {
+                    background: desaturate(@green, 20%);
+                }
+
+                &:nth-of-type(7n-2) {
+                    background: desaturate(@blue, 20%);
+                }
+
+                &:nth-of-type(7n-1) {
+                    background: desaturate(@purple, 20%);
+                }
+
+                &:nth-of-type(7n) {
+                    background: desaturate(@pink, 20%);
+                }
+            }
+        }
+    }
+}
+
 .github-PrInfo {
     .meta-info,
     .conversation,
@@ -133,6 +179,7 @@
         border: 0;
         padding: 10px 14px;
         background: none;
+        background-color: lighten(@app-background-color, 6%);
 
         &:nth-of-type(odd) {
             background-color: lighten(@app-background-color, 11%);

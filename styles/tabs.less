@@ -1,9 +1,5 @@
 // Tabs
 
-atom-pane .tab-bar .tab {
-    transition: margin-top 0.5s 1;
-}
-
 .tab-bar {
     padding-top: 14px;
     background-color: transparent;
@@ -15,22 +11,39 @@ atom-pane .tab-bar .tab {
         margin-top: 0;
         min-width: 100px;
         border-radius: 20px 20px 0 0;
+        color: rgba(255,255,255,0.7);
 
+        &[data-type="ResultsPaneView"], &[data-type="IssueishPaneItem"] {
+            border-top: 1px solid;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            &:after {
+                position: absolute;
+                display: block;
+                top: -5px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                text-align: center;
+                vertical-align: middle;
+                font-family: 'Octicons Regular';
+                border-radius: 50%;
+                line-height: 19px;
+                font-size: 14px;
+                width: 21px;
+                height: 21px;
+                background-color: inherit;
+                border: 1px solid;
+            }
+        }
+        &[data-type="IssueishPaneItem"] {
+            &:after {
+                content: "\f008";
+            }
+        }
         &[data-type="ResultsPaneView"] {
-            background: white !important;
-            max-width: 200px;
-            width: 140px;
-
-            > .title {
-                color: black !important;
-            }
-
-            &:before {
-                background: white !important;
-            }
-
-            .close-icon {
-                color: black !important;
+            &:after {
+                content: "\f02e";
             }
         }
 
@@ -51,7 +64,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(n) {
             background: desaturate(@red, 20%);
-            color: desaturate(@red, 20%);
 
             .close-icon:hover {
                 color: desaturate(@red, 20%);
@@ -60,7 +72,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(7n-5) {
             background: desaturate(@orange, 20%);
-            color: desaturate(@orange, 20%);
 
             .close-icon:hover {
                 color: desaturate(@orange, 20%);
@@ -69,7 +80,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(7n-4) {
             background: desaturate(@yellow, 20%);
-            color: desaturate(@yellow, 20%);
 
             .close-icon:hover {
                 color: desaturate(@yellow, 20%);
@@ -78,7 +88,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(7n-3) {
             background: desaturate(@green, 20%);
-            color: desaturate(@green, 20%);
 
             .close-icon:hover {
                 color: desaturate(@green, 20%);
@@ -87,7 +96,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(7n-2) {
             background: desaturate(@blue, 20%);
-            color: desaturate(@blue, 20%);
 
             .close-icon:hover {
                 color: desaturate(@blue, 20%);
@@ -96,7 +104,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(7n-1) {
             background: desaturate(@purple, 20%);
-            color: desaturate(@purple, 20%);
 
             .close-icon:hover {
                 color: desaturate(@purple, 20%);
@@ -105,7 +112,6 @@ atom-pane .tab-bar .tab {
 
         &:nth-of-type(7n) {
             background: desaturate(@pink, 20%);
-            color: desaturate(@pink, 20%);
 
             .close-icon:hover {
                 color: desaturate(@pink, 20%);
@@ -113,47 +119,50 @@ atom-pane .tab-bar .tab {
         }
 
         &.active {
-             > .title,
+            color: white;
             > .close-icon {
                 color: #fff;
             }
 
             &:not(:only-child) {
-                box-shadow: 0 -13px 0 0;
+                padding-top: 14px;
+                margin-top: -14px;
+
+            }
+            &:after {
+                top: 9px;
+            }
+            .close-icon {
+                top: 24px !important;
             }
         }
 
         > .title {
             font-family: 'Consolas';
-            color: rgba(255,255,255,0.7);
-            padding: 15px 0;
+            padding: 20px 0 5px;
             position: relative;
             background-color: transparent !important;
         }
 
+
         .close-icon {
             z-index: 22;
-            height: 25px;
-            width: 25px;
             text-align: center;
-            line-height: 25px;
+            line-height: 20px;
             color: rgba(255,255,255,0.7);
-            top: 10px;
-            right: 4px;
+            border-radius: 50%;
+            height: 20px !important;
+            width: 20px !important;
+            top: 10px !important;
+            right: 4px !important;
 
             &:hover {
-                border-radius: 50%;
                 background-color: white;
             }
         }
         // Modified Icon (the blue circle) -------------------
-        &.modified:not(:hover) .close-icon {
-            top: 20px;
-            right: 12px;
-            margin-top: -3px;
-        }
-        // Dragging -------------------
-        // Styles get applied while dragging a tab
+
+        // Dragging styles get applied while dragging a tab
         &.is-dragging {
             background: darken(@tab-background-color, 10%);
             border-color: transparent;
