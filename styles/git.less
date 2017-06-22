@@ -123,13 +123,48 @@
 
 }
 
-.github-PrPaneItem-container {
-    max-width: 100%;
-    .github-PrPaneItem {
+.github-PrPaneItem {
+    padding: 30px 0;
+    .github-PrPaneItem-container {
+        max-width: 100%;
         .issueish-avatar-and-title {
             padding: 10px;
             background: rgba(255, 255, 255, 0.15);
             border-bottom: 0;
+        }
+        .github-PrTimeline {
+            > * {
+                margin: 0;
+                padding: 30px 30px 30px 50px;
+                border-bottom: 0;
+                &:nth-of-type(n) {
+                    background: desaturate(@red, 20%);
+                }
+
+                &:nth-of-type(7n-5) {
+                    background: desaturate(@orange, 20%);
+                }
+
+                &:nth-of-type(7n-4) {
+                    background: desaturate(@yellow, 20%);
+                }
+
+                &:nth-of-type(7n-3) {
+                    background: desaturate(@green, 20%);
+                }
+
+                &:nth-of-type(7n-2) {
+                    background: desaturate(@blue, 20%);
+                }
+
+                &:nth-of-type(7n-1) {
+                    background: desaturate(@purple, 20%);
+                }
+
+                &:nth-of-type(7n) {
+                    background: desaturate(@pink, 20%);
+                }
+            }
         }
     }
 }
