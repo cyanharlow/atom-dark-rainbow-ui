@@ -122,7 +122,21 @@ atom-text-editor.editor {
         background-color: #000;
         background-attachment: fixed;
         background-position: left top;
-        background-image: repeating-linear-gradient(to right, darken(@red, 20%), darken(@orange, 25%), darken(@yellow, 31%), darken(@green, 15%), darken(@blue, 25%), darken(@purple, 15%), darken(@pink, 45%), darken(@red, 20%) 700px);
+        background-image: repeating-linear-gradient(to right,
+            darken(@red, 20%),
+            darken(@red, 20%) .9em,
+            darken(@orange, 25%) 1em,
+            darken(@orange, 25%) 1.9em,
+            darken(@yellow, 31%) 2em,
+            darken(@yellow, 31%) 2.9em,
+            darken(@green, 15%) 3em,
+            darken(@green, 15%) 3.9em,
+            darken(@blue, 25%) 4em,
+            darken(@blue, 25%) 4.9em,
+            darken(@purple, 15%) 5em,
+            darken(@purple, 15%) 5.9em,
+            darken(@pink, 45%) 6em,
+            darken(@pink, 45%) 6.9em);
     }
 }
 
@@ -146,11 +160,6 @@ atom-text-editor.editor {
                 padding-left: 4px;
                 padding-right: 25px;
                 opacity: 1;
-
-                .icon-right {
-                    // opacity: 1;
-                    // visibility: visible;
-                }
 
                 &.git-line-added,
                 &.git-line-modified {
