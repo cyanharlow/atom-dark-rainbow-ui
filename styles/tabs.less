@@ -8,6 +8,7 @@
     overflow-y: hidden;
 
     .tab {
+        cursor: pointer;
         margin-top: 0;
         min-width: 100px;
         border-radius: 20px 20px 0 0;
@@ -43,20 +44,25 @@
                 content: "\f02e";
             }
         }
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: fade(black, 60%);
+        }
+
+        &:hover {
+            &:before {
+                background: fade(black, 30%);
+            }
+        }
 
         &:not(.active) {
             color: rgba(255,255,255,0.7);
-
-            &:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                border-radius: inherit;
-                background: rgba(0,0,0,0.6);
-            }
         }
 
         &:nth-of-type(n) {
@@ -119,6 +125,10 @@
             color: white;
             > .close-icon {
                 color: #fff;
+            }
+
+            &:before {
+                background: none;
             }
 
             &:not(:only-child) {
