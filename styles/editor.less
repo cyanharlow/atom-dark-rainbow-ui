@@ -65,11 +65,7 @@ atom-text-editor.editor {
             position: relative;
             background-color: transparent;
             background-color: none;
-            // &:before {
-            //     left: -29px;
-            //     background-color: darken(@gray, 60%);
-            //     z-index: -1;
-            // }
+
         }
 
         .fold-marker {
@@ -207,9 +203,9 @@ atom-text-editor.editor {
                 }
 
                 &.cursor-line {
-                    background-color: @app-background-color;
+                    background-color: none;
                     &.cursor-line-no-selection {
-                        background-color: black;
+                        background-color: none;
                         font-weight: bold;
                     }
                 }
