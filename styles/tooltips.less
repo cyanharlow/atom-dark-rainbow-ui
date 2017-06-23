@@ -8,30 +8,32 @@ div.tooltip {
 
     &.top {
         .tooltip-arrow {
-            border-top-color: @pink !important;
+            border-top-color: @tooltip-color !important;
         }
     }
 
     &.bottom {
         .tooltip-arrow {
-            border-bottom-color: @pink !important;
+            border-bottom-color: @tooltip-color !important;
         }
     }
 
     &.right {
         .tooltip-arrow {
-            border-right-color: @pink !important;
+            border-right-color: @tooltip-color !important;
+            border-right-width: 8px;
         }
     }
 
     &.left {
         .tooltip-arrow {
-            border-left-color: @pink !important;
+            border-left-color: @tooltip-color !important;
+            border-left-width: 8px;
         }
     }
     .tooltip-inner {
         color: #fff;
-        background-color: @pink;
+        background-color: @tooltip-color;
         line-height: 1;
         padding: 0.75em;
         white-space: nowrap;

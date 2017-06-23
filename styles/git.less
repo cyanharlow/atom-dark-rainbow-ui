@@ -50,7 +50,7 @@
         .github-StagingView-group {
             &.is-focused {
                 .is-selected {
-                    background-color: @pink;
+                    background-color: @background-color-highlight;
                 }
             }
         }
@@ -132,14 +132,14 @@
 
     .tooltip-arrow.tooltip-arrow,
     .tooltip-inner.tooltip-inner {
-        background-color: @pink !important;
-        border-color: @pink;
+        background-color: @tooltip-color !important;
+        border-color: @tooltip-color;
 
         .btn {
             background-color: black;
 
             &.github-PushPullMenuView-push {
-                border-left: 3px solid @pink;
+                border-left: 3px solid @tooltip-color;
             }
 
             &:hover {
