@@ -1,5 +1,4 @@
 // Tree View
-
 .tree-view-resizer {
     border-right: 1px solid @base-border-color;
 }
@@ -32,7 +31,7 @@
         position: relative;
         padding: 0;
         vertical-align: middle;
-        background: #000;
+        background-color: #000;
 
         span {
             color: #fff !important;
@@ -227,15 +226,15 @@
     .status-modified > span.icon-file-text,
     li.status-modified > .header > span.icon-file-directory {
         &:before {
-            background: lighten(@blue, 20%);
-            color: darken(@blue, 20%);
+            background-color: lighten(@orange, 20%);
+            color: darken(@orange, 20%);
             border-color: inherit;
         }
     }
     .status-added > span.icon-file-text,
     li.status-added > .header > span.icon-file-directory {
         &:before {
-            background: lighten(@green, 30%);
+            background-color: lighten(@green, 30%);
             color: darken(@green, 10%);
             border-color: inherit;
         }

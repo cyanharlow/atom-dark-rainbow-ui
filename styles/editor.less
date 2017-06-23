@@ -19,7 +19,7 @@ atom-text-editor.editor.mini {
 .options-label {
     .btn-toggle .btn {
         margin-left: 8px;
-        background: none;
+        background-color: none;
         height: 35px;
         border-radius: 50% !important;
         overflow: hidden;
@@ -27,11 +27,11 @@ atom-text-editor.editor.mini {
         border: 0;
 
         &.selected {
-            background: @pink;
+            background-color: @pink;
         }
 
         &:hover {
-            background: lighten(@gray, 20%);
+            background-color: lighten(@gray, 20%);
         }
     }
 }
@@ -49,12 +49,12 @@ atom-text-editor.editor {
     }
 
     .scroll-view {
-        background: transparent !important;
+        background-color: transparent !important;
         overflow: visible;
         .lines {
-            background: transparent !important;
+            background-color: transparent !important;
             > div > div {
-                background: transparent !important;
+                background-color: transparent !important;
             }
         }
         .line {
@@ -64,7 +64,7 @@ atom-text-editor.editor {
         .cursor-line {
             position: relative;
             background-color: transparent;
-            background: none;
+            background-color: none;
             // &:before {
             //     content: "";
             //     display: block;
@@ -73,7 +73,7 @@ atom-text-editor.editor {
             //     top: 0;
             //     bottom: 0;
             //     right: 0;
-            //     background: darken(@gray, 60%);
+            //     background-color: darken(@gray, 60%);
             //     z-index: -1;
             // }
         }
@@ -122,21 +122,22 @@ atom-text-editor.editor {
         background-color: #000;
         background-attachment: fixed;
         background-position: left top;
-        background-image: repeating-linear-gradient(to right,
-            darken(@red, 20%),
-            darken(@red, 20%) .9em,
-            darken(@orange, 25%) 1em,
-            darken(@orange, 25%) 1.9em,
-            darken(@yellow, 31%) 2em,
-            darken(@yellow, 31%) 2.9em,
-            darken(@green, 15%) 3em,
-            darken(@green, 15%) 3.9em,
-            darken(@blue, 25%) 4em,
-            darken(@blue, 25%) 4.9em,
-            darken(@purple, 15%) 5em,
-            darken(@purple, 15%) 5.9em,
-            darken(@pink, 45%) 6em,
-            darken(@pink, 45%) 6.9em);
+        background-color: darken(@pink, 20%);
+        // background-image: repeating-linear-gradient(to right,
+        //     darken(@red, 20%),
+        //     darken(@red, 20%) 1.9px,
+        //     darken(@orange, 25%) 2px,
+        //     darken(@orange, 25%) 3.9px,
+        //     darken(@yellow, 31%) 2em,
+        //     darken(@yellow, 31%) 2.9em,
+        //     darken(@green, 15%) 3em,
+        //     darken(@green, 15%) 3.9em,
+        //     darken(@blue, 25%) 4em,
+        //     darken(@blue, 25%) 4.9em,
+        //     darken(@purple, 15%) 5em,
+        //     darken(@purple, 15%) 5.9em,
+        //     darken(@pink, 45%) 6em,
+        //     darken(@pink, 45%) 6.9em);
     }
 }
 
@@ -146,11 +147,11 @@ atom-text-editor.editor {
 
     .gutter {
         overflow: visible;
-        background: @app-background-color;
+        background-color: @app-background-color;
 
         .line-numbers {
             > div {
-                background: @app-background-color !important;
+                background-color: @app-background-color !important;
             }
 
             .line-number {
@@ -163,15 +164,19 @@ atom-text-editor.editor {
 
                 &.git-line-added,
                 &.git-line-modified {
-                    &:after {
+                    &:before {
                         content: "";
+                        position: absolute;
+                        font-family: 'Octicons Regular';
+                        text-align: left;
+                        padding-left: 3px;
+                        z-index: -1;
                         display: block;
                         position: absolute;
-                        margin-left: -5px;
-                        border-left: 5px solid transparent;
+                        border-left: 3px solid inherit;
                         height: 100%;
                         width: 3000px;
-                        left: 100%;
+                        left: 0;
                         top: 0;
                         pointer-events: none;
                     }
@@ -179,10 +184,13 @@ atom-text-editor.editor {
 
                 &.git-line-removed {
                     &:before {
-                        left: 100%;
-                        border-left-color: @red;
+                        display: none;
                     }
                     &:after {
+                        content: "";
+                        display: block;
+                        bottom: -3px;
+                        position: absolute;
                         left: 100%;
                         width: 3000px;
                         border-bottom: 1px dashed @red;
@@ -190,23 +198,23 @@ atom-text-editor.editor {
                 }
 
                 &.git-line-added {
-                    &:after {
-                        border-color: lighten(@green, 10%);
-                        background: darken(@green, 15%);
+                    &:before {
+                        color: lighten(@green, 10%);
+                        background-color: darken(@green, 15%);
                     }
                 }
 
                 &.git-line-modified {
-                    &:after {
-                        border-color: lighten(@blue, 10%);
-                        background: darken(@blue, 25%);
+                    &:before {
+                        color: lighten(@orange, 10%)
+                        background-color: darken(@orange, 30%);
                     }
                 }
 
                 &.cursor-line {
-                    background: @app-background-color;
+                    background-color: @app-background-color;
                     &.cursor-line-no-selection {
-                        background: black;
+                        background-color: black;
                         font-weight: bold;
                     }
                 }
@@ -250,6 +258,22 @@ atom-text-editor.editor {
                             }
                         }
                     }
+                }
+            }
+        }
+
+        &.git-diff-icon {
+            &.git-line-added {
+                &:before {
+                    content: "\f05d" !important;
+                    border-color: transparent;
+                }
+            }
+
+            &.git-line-modified {
+                &:before {
+                    content: "\f052" !important;
+                    border-color: transparent;
                 }
             }
         }

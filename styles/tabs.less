@@ -3,7 +3,7 @@
 .tab-bar {
     padding-top: 14px;
     background-color: transparent;
-    background: none;
+    background-color: none;
     overflow-x: auto;
     overflow-y: hidden;
 
@@ -52,12 +52,12 @@
             top: 0;
             bottom: 0;
             border-radius: inherit;
-            background: fade(black, 60%);
+            background-color: fade(black, 60%);
         }
 
         &:hover {
             &:before {
-                background: fade(black, 30%);
+                background-color: fade(black, 30%);
             }
         }
 
@@ -66,7 +66,7 @@
         }
 
         &:nth-of-type(n) {
-            background: desaturate(@red, 20%);
+            background-color: desaturate(@red, 20%);
 
             .close-icon:hover {
                 color: desaturate(@red, 20%);
@@ -74,7 +74,7 @@
         }
 
         &:nth-of-type(7n-5) {
-            background: desaturate(@orange, 20%);
+            background-color: desaturate(@orange, 20%);
 
             .close-icon:hover {
                 color: desaturate(@orange, 20%);
@@ -82,7 +82,7 @@
         }
 
         &:nth-of-type(7n-4) {
-            background: desaturate(@yellow, 20%);
+            background-color: desaturate(@yellow, 20%);
 
             .close-icon:hover {
                 color: desaturate(@yellow, 20%);
@@ -90,7 +90,7 @@
         }
 
         &:nth-of-type(7n-3) {
-            background: desaturate(@green, 20%);
+            background-color: desaturate(@green, 20%);
 
             .close-icon:hover {
                 color: desaturate(@green, 20%);
@@ -98,7 +98,7 @@
         }
 
         &:nth-of-type(7n-2) {
-            background: desaturate(@blue, 20%);
+            background-color: desaturate(@blue, 20%);
 
             .close-icon:hover {
                 color: desaturate(@blue, 20%);
@@ -106,7 +106,7 @@
         }
 
         &:nth-of-type(7n-1) {
-            background: desaturate(@purple, 20%);
+            background-color: desaturate(@purple, 20%);
 
             .close-icon:hover {
                 color: desaturate(@purple, 20%);
@@ -114,7 +114,7 @@
         }
 
         &:nth-of-type(7n) {
-            background: desaturate(@pink, 20%);
+            background-color: desaturate(@pink, 20%);
 
             .close-icon:hover {
                 color: desaturate(@pink, 20%);
@@ -128,7 +128,7 @@
             }
 
             &:before {
-                background: none;
+                background-color: none;
             }
 
             &:not(:only-child) {
@@ -155,13 +155,13 @@
         .close-icon {
             z-index: 22;
             text-align: center;
-            line-height: 20px;
+            line-height: 15px;
             color: rgba(255,255,255,0.7);
             border-radius: 50%;
-            height: 20px !important;
-            width: 20px !important;
+            height: 15px !important;
+            width: 15px !important;
             top: 18px !important;
-            right: 4px !important;
+            right: 7px !important;
 
             &:hover {
                 background-color: white;
@@ -171,7 +171,7 @@
 
         // Dragging styles get applied while dragging a tab
         &.is-dragging {
-            background: darken(@tab-background-color, 10%);
+            background-color: darken(@tab-background-color, 10%);
             border-color: transparent;
             opacity: 0.5;
 

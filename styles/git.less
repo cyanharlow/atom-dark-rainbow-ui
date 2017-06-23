@@ -1,19 +1,42 @@
 // Git
 
-.status          { color: @text-color; }
-.status-added    { color: @text-color-success; } // green
-.status-ignored  { color: @text-color-subtle; }  // faded
-.status-modified { color: @text-color-warning; } // orange
-.status-removed  { color: @text-color-error; }   // red
-.status-renamed  { color: @text-color-info; }    // blue
+.status {
+    color: @text-color;
+}
 
+.status-added {
+    color: @green;
+}
+// green
+
+.status-ignored {
+    color: @text-color-subtle;
+}
+// faded
+
+.status-modified {
+    color: @orange;
+}
+// orange
+
+.status-removed {
+    color: @red;
+}
+// red
+
+.status-renamed {
+    color: @purple;
+}
+// blue
 .github-CommitView {
     background-color: @outer-atom-background;
+
     .github-CommitView-editor {
         background-color: transparent;
-        background: none;
+        background-color: none;
         border: 0;
         padding: 0;
+
         .editor {
             padding: 10px 20px;
             border-radius: 50px;
@@ -26,69 +49,72 @@
     &:focus {
         .github-StagingView-group {
             &.is-focused {
-                 .is-selected {
-                     background: @pink;
-                 }
+                .is-selected {
+                    background-color: @pink;
+                }
             }
-
         }
     }
+
     .github-StagingView-group {
         &.is-focused {
             .is-selected {
-                background: fade(white, 10%);
+                background-color: fade(white, 10%);
             }
         }
+
         &.github-StagedChanges {
-            background: @app-background-color;
+            background-color: @app-background-color;
+
             header {
-                background: darken(@app-background-color, 20%);
+                background-color: darken(@app-background-color, 20%);
             }
         }
-        &.github-UnstagedChanges  {
-            background: lighten(@app-background-color, 24%);
+
+        &.github-UnstagedChanges {
+            background-color: lighten(@app-background-color, 24%);
+
             header {
-                background: lighten(@app-background-color, 22%);
+                background-color: lighten(@app-background-color, 22%);
             }
         }
     }
 }
 
-
 .github-FilePatchView {
-
     &:focus {
         .github-HunkView.is-selected.is-hunkMode {
             .github-HunkView-header,
             .github-HunkView-title {
-                background: black;
+                background-color: black;
                 color: inherit;
             }
         }
     }
+
     .github-HunkView-line {
         &.is-selected {
-            background: black;
+            background-color: black;
+
             &.is-deleted {
                 .github-HunkView-lineNumber {
-                    background: @red;
+                    background-color: @red;
                 }
             }
+
             &.is-added {
                 .github-HunkView-lineNumber {
-                    background: @green;
+                    background-color: @green;
                 }
             }
+
             &.is-modified {
                 .github-HunkView-lineNumber {
-                    background: @blue;
+                    background-color: @blue;
                 }
             }
         }
-
     }
-
-
 }
 
 .github-HunkView {
@@ -99,68 +125,80 @@
     &.in {
         opacity: 1;
     }
+
     .github-PushPullMenuView .icon-mark-github::before {
         color: white;
     }
-    .tooltip-inner.tooltip-inner, .tooltip-arrow.tooltip-arrow {
+
+    .tooltip-arrow.tooltip-arrow,
+    .tooltip-inner.tooltip-inner {
         background-color: @pink !important;
         border-color: @pink;
+
         .btn {
             background-color: black;
+
             &.github-PushPullMenuView-push {
                 border-left: 3px solid @pink;
             }
+
             &:hover {
-                background: #333;
+                background-color: #333;
             }
         }
     }
-
 }
 
 .github-PrPaneItem {
     padding: 30px 0;
+
     .github-PrPaneItem-container {
         max-width: 100%;
+
         .issueish-avatar-and-title {
             padding: 10px;
-            background: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.15);
             border-bottom: 0;
         }
-        .issueish-badge-and-link, .issueish-avatar-and-title, .github-DotComMarkdownHtml {
+
+        .github-DotComMarkdownHtml,
+        .issueish-avatar-and-title,
+        .issueish-badge-and-link {
             margin: 0 30px 20px;
         }
+
         .github-PrTimeline {
             > * {
                 margin: 0;
                 padding: 30px 30px 30px 50px;
                 border-bottom: 0;
+
                 &:nth-of-type(n) {
-                    background: desaturate(@red, 20%);
+                    background-color: desaturate(@red, 20%);
                 }
 
                 &:nth-of-type(7n-5) {
-                    background: desaturate(@orange, 20%);
+                    background-color: desaturate(@orange, 20%);
                 }
 
                 &:nth-of-type(7n-4) {
-                    background: desaturate(@yellow, 20%);
+                    background-color: desaturate(@yellow, 20%);
                 }
 
                 &:nth-of-type(7n-3) {
-                    background: desaturate(@green, 20%);
+                    background-color: desaturate(@green, 20%);
                 }
 
                 &:nth-of-type(7n-2) {
-                    background: desaturate(@blue, 20%);
+                    background-color: desaturate(@blue, 20%);
                 }
 
                 &:nth-of-type(7n-1) {
-                    background: desaturate(@purple, 20%);
+                    background-color: desaturate(@purple, 20%);
                 }
 
                 &:nth-of-type(7n) {
-                    background: desaturate(@pink, 20%);
+                    background-color: desaturate(@pink, 20%);
                 }
             }
         }
@@ -168,23 +206,24 @@
 }
 
 .github-PrInfo {
-    .meta-info,
-    .conversation,
     .commit-count,
+    .conversation,
     .file-count,
-    .reactions,
-    .labels {
+    .labels,
+    .meta-info,
+    .reactions {
         border: 0;
         padding: 10px 14px;
-        background: none;
+        background-color: none;
         background-color: lighten(@app-background-color, 6%);
 
         &:nth-of-type(odd) {
             background-color: lighten(@app-background-color, 11%);
         }
-        &:empty{
+
+        &:empty {
             background-color: transparent !important;
-            background: none !important;
+            background-color: none !important;
         }
     }
 }
