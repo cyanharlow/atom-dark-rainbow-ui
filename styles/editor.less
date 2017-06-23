@@ -37,6 +37,11 @@ atom-text-editor.editor.mini {
 }
 
 atom-text-editor.editor {
+    &:not(.mini) {
+        .scroll-view {
+            padding-left: 2em;
+        }
+    }
     overflow: hidden;
     background-color: @app-background-color;
 
@@ -50,7 +55,7 @@ atom-text-editor.editor {
 
     .scroll-view {
         background-color: transparent !important;
-        overflow: visible;
+        // overflow: visible;
         .lines {
             background-color: transparent !important;
             > div > div {
@@ -96,7 +101,7 @@ atom-text-editor.editor {
                     z-index: 888888888888888888888888888888888888;
                     position: fixed;
                     color: @yellow;
-                    left: -1.4em;
+                    left: -1.2em;
                     font-size: 169%;
                     vertical-align: top;
                     line-height: 82%;
@@ -147,8 +152,8 @@ atom-text-editor.editor {
                 font-family: 'Consolas';
                 border-left: 0;
                 border-right: 0;
-                padding-left: 6px;
-                padding-right: 25px;
+                padding-left: 7px;
+                padding-right: 5px;
                 opacity: 1;
 
                 &.git-line-added,

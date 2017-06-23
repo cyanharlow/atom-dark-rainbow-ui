@@ -3,14 +3,10 @@
 .tab-bar {
     padding-top: 14px;
     background-color: transparent;
-    background-color: none;
-    overflow-x: auto;
-    overflow-y: hidden;
 
     .tab {
         cursor: pointer;
         margin-top: 0;
-        min-width: 100px;
         border-radius: 20px 20px 0 0;
         color: rgba(255,255,255,0.7);
 
@@ -128,20 +124,20 @@
             }
 
             &:before {
-                background-color: none;
+                background-color: transparent;
             }
 
             &:not(:only-child) {
                 padding-top: 14px;
                 margin-top: -14px;
+                &:after {
+                    top: 9px;
+                }
+                .close-icon {
+                    top: 32px !important;
+                }
+            }
 
-            }
-            &:after {
-                top: 9px;
-            }
-            .close-icon {
-                top: 32px !important;
-            }
         }
 
         > .title {
