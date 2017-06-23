@@ -86,7 +86,7 @@
         .github-HunkView.is-selected.is-hunkMode {
             .github-HunkView-header,
             .github-HunkView-title {
-                background-color: black;
+                background-color: @background-color-highlight;
                 color: inherit;
             }
         }
@@ -99,18 +99,13 @@
             &.is-deleted {
                 .github-HunkView-lineNumber {
                     background-color: @red;
+                    border-color: darken(@red, 20%)
                 }
             }
-
             &.is-added {
                 .github-HunkView-lineNumber {
                     background-color: @green;
-                }
-            }
-
-            &.is-modified {
-                .github-HunkView-lineNumber {
-                    background-color: @blue;
+                    border-color: darken(@green, 20%)
                 }
             }
         }
@@ -119,6 +114,24 @@
 
 .github-HunkView {
     border-bottom: 15px solid @outer-atom-background;
+    .github-HunkView-header {
+        .github-HunkView-stageButton {
+            background-color: black;
+        }
+        .github-HunkView-discardButton {
+            background-color: lighten(@app-background-color, 20%);
+            &:after {
+                content: " Discard Selection";
+            }
+        }
+    }
+    &.is-hunkMode {
+        .github-HunkView-header .github-HunkView-discardButton {
+            &:after {
+                content: " Discard Hunk";
+            }
+        }
+    }
 }
 
 .github-StatusBarTileController-tooltipMenu {
