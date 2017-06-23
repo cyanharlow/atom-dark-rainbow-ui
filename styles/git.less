@@ -124,27 +124,30 @@
 .github-StatusBarTileController-tooltipMenu {
     &.in {
         opacity: 1;
-    }
+        .tooltip-arrow.tooltip-arrow {
+            background-color: @tooltip-color !important;
+            border-color: @tooltip-color;
+        }
+        .tooltip-inner.tooltip-inner {
+            background-color: @tooltip-color !important;
+            border-color: @tooltip-color;
+            padding-right: 15px;
 
-    .github-PushPullMenuView .icon-mark-github::before {
-        color: white;
-    }
+            .btn {
+                background-color: black;
 
-    .tooltip-arrow.tooltip-arrow,
-    .tooltip-inner.tooltip-inner {
-        background-color: @tooltip-color !important;
-        border-color: @tooltip-color;
+                &.github-PushPullMenuView-push {
+                    border-left: 3px solid @tooltip-color;
+                }
 
-        .btn {
-            background-color: black;
-
-            &.github-PushPullMenuView-push {
-                border-left: 3px solid @tooltip-color;
+                &:hover {
+                    background-color: #333;
+                }
             }
+        }
 
-            &:hover {
-                background-color: #333;
-            }
+        .github-PushPullMenuView .icon-mark-github::before {
+            color: white;
         }
     }
 }
