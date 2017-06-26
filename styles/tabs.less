@@ -2,51 +2,50 @@
 
 .tab-bar {
     background-color: transparent;
+    padding-top: 15px;
 
     .tab {
         cursor: pointer;
         margin-top: 0;
         padding-left: 0;
         padding-right: 0;
+        padding-top: 15px;
         color: rgba(255,255,255,0.7);
         border-radius: 20px 20px 0 0;
+
         .title {
             font-family: 'Consolas';
-            padding-top: 35px;
-            padding-bottom: 15px;
-            padding-left: 10px;
-            padding-right: 30px;
+            padding: 25px 30px 8px 10px;
             position: relative;
             color: white;
             border-radius: inherit;
             background-color: inherit;
+
             &:before {
                 position: absolute;
                 display: block;
-                top: 4px;
-                left: 0;
-                right: 0;
+                top: 6px;
                 margin: auto;
                 text-align: center;
                 vertical-align: middle;
                 font-family: 'Octicons Regular';
                 border-radius: 50%;
-                line-height: 19px;
-                font-size: 14px;
-                width: 21px;
-                height: 21px;
+                line-height: 15px;
+                font-size: 12px;
+                width: 17px;
+                height: 17px;
                 z-index: 4;
             }
+
             &:after {
                 content: "";
                 position: absolute;
                 left: 0;
                 right: 0;
-                top: -3px;
+                top: 0;
                 bottom: 0;
                 border-radius: inherit;
                 background-color: fade(black, 50%);
-                box-shadow: inset 0 18px 0 0 @outer-atom-background, 0 -8px 0 0 @outer-atom-background;
             }
 
             &.status-modified {
@@ -54,21 +53,25 @@
                     background-color: @orange;
                 }
             }
+
             &.status-added {
                 &:before {
                     background-color: @green;
                 }
             }
-            &.status-modified, &.status-added {
+
+            &.status-added,
+            &.status-modified {
                 &:before {
                     right: auto;
                     left: auto;
                     width: 10px;
                     height: 10px;
-                    top: 21px;
+                    top: 9px;
                 }
             }
         }
+
         &:not([data-type="TextEditor"]) {
             .title {
                 &:before {
@@ -77,6 +80,7 @@
                 }
             }
         }
+
         &[data-type="TextEditor"] {
             .title {
                 &:before {
@@ -84,11 +88,13 @@
                 }
             }
         }
+
         &[data-type="IssueishPaneItem"] .title {
             &:before {
                 content: "\f008";
             }
         }
+
         &[data-type="ResultsPaneView"] .title {
             &:before {
                 content: "\f02e";
@@ -106,49 +112,70 @@
         }
 
         &:nth-of-type(n) {
-            background-color: desaturate(@red, 20%);
+            .title {
+                background-color: desaturate(@red, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@red, 20%);
             }
         }
 
         &:nth-of-type(7n-5) {
-            background-color: desaturate(@orange, 20%);
+            .title {
+                background-color: desaturate(@orange, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@orange, 20%);
             }
         }
 
         &:nth-of-type(7n-4) {
-            background-color: desaturate(@yellow, 20%);
+            .title {
+                background-color: desaturate(@yellow, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@yellow, 20%);
             }
         }
 
         &:nth-of-type(7n-3) {
-            background-color: desaturate(@green, 20%);
+            .title {
+                background-color: desaturate(@green, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@green, 20%);
             }
         }
 
         &:nth-of-type(7n-2) {
-            background-color: desaturate(@blue, 20%);
+            .title {
+                background-color: desaturate(@blue, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@blue, 20%);
             }
         }
 
         &:nth-of-type(7n-1) {
-            background-color: desaturate(@purple, 20%);
+            .title {
+                background-color: desaturate(@purple, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@purple, 20%);
             }
         }
 
         &:nth-of-type(7n) {
-            background-color: desaturate(@pink, 20%);
+            .title {
+                background-color: desaturate(@pink, 20%);
+            }
+
             .close-icon:hover {
                 color: desaturate(@pink, 20%);
             }
@@ -161,18 +188,21 @@
                     border: 0;
                 }
             }
+
             > .close-icon {
                 color: #fff;
             }
+
             &:not(:only-child) {
-                > .title:after {
-                    box-shadow: none;
+                padding-top: 0;
+                > .title {
+                    padding-top: 40px;
                 }
             }
+
             &:before {
                 background-color: transparent;
             }
-
         }
 
         .close-icon {
@@ -183,7 +213,7 @@
             border-radius: 50%;
             height: 15px !important;
             width: 15px !important;
-            top: 35px !important;
+            top: 25px !important;
             right: 7px !important;
 
             &:hover {
@@ -191,7 +221,6 @@
             }
         }
         // Modified Icon (the blue circle) -------------------
-
         // Dragging styles get applied while dragging a tab
         &.is-dragging {
             background-color: darken(@tab-background-color, 10%);
