@@ -60,11 +60,19 @@ span {
 
     &.syntax--punctuation {
         color: lighten(@gray, 80%);
+
+        & + span.syntax--tag.syntax--yaml {
+            color: lighten(@yellow, 25%);
+        }
     }
 
-    &.leading-whitespace,
-    .trailing-whitespace {
+
+    &.leading-whitespace {
         position: relative;
+
+        & + span.syntax--yaml.syntax--tag.syntax--entity {
+            color: lighten(@purple, 37%);
+        }
 
         &:before {
             content: "";
@@ -75,6 +83,19 @@ span {
             bottom: -0.15em;
             top: -0.15em;
             background-image: repeating-linear-gradient(to right, transparent, transparent 2.1em, rgba(255, 255, 255, 0.15) 2.21em);
+        }
+    }
+    &.syntax--yaml {
+        span.leading-whitespace {
+            &:before {
+                background-image: repeating-linear-gradient(to right, transparent, transparent 1em, rgba(255, 255, 255, 0.15) 1.1em);
+            }
+        }
+        &.syntax--tag.syntax--entity.syntax--name:nth-last-child(2) {
+            color: lighten(@blue, 25%);
+        }
+        &.syntax--tag.syntax--entity.syntax--name:first-child {
+            color: lighten(@red, 35%);
         }
     }
 }
