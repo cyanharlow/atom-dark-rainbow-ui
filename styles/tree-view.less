@@ -27,7 +27,7 @@
 
     .list-item {
         &:before {
-            margin-right: 0;
+            margin-right: 0 !important;
         }
     }
 
@@ -191,6 +191,9 @@
         }
     }
 
+    span.icon {
+        font-size: 115%;
+    }
     span.icon.icon-file-text {
         // font-family: 'Lucida Console', monospace;
     }
@@ -198,7 +201,6 @@
     span.icon-file-directory, span.icon-repo {
         vertical-align: middle;
         // font-family: 'Gadugi';
-        font-size: 115%;
     }
 
     span.icon {
@@ -222,7 +224,6 @@
     .status-modified > span.icon-file-text,
     li.status-modified > .header > span.icon-file-directory {
         text-decoration: underline;
-        font-size: 110%;
         position: relative;
     }
 
