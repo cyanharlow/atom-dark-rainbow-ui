@@ -14,15 +14,20 @@
 // rainbow project file tree view
 
 .tree-view .list-tree {
-    font-size: 13px;
     padding-right: 0;
 
     .header.list-item {
         padding-left: 15px;
 
         &:before {
-            color: #fff;
+            color: white;
             z-index: 9;
+        }
+    }
+
+    .list-item {
+        &:before {
+            margin-right: 0;
         }
     }
 
@@ -31,10 +36,11 @@
         position: relative;
         padding: 0;
         vertical-align: middle;
-        background-color: #000;
+        background-color: black;
 
         span {
-            color: #fff !important;
+            color: white !important;
+            font-weight: bold;
             line-height: 3 !important;
             vertical-align: middle;
             z-index: 6;
@@ -186,15 +192,13 @@
     }
 
     span.icon.icon-file-text {
-        font-family: 'Lucida Console', monospace;
+        // font-family: 'Lucida Console', monospace;
     }
 
-    span.icon-file-directory {
+    span.icon-file-directory, span.icon-repo {
         vertical-align: middle;
-        font-weight: bold;
-        font-family: 'Gadugi';
-        font-size: 14px;
-        letter-spacing: 0.5px;
+        // font-family: 'Gadugi';
+        font-size: 115%;
     }
 
     span.icon {
