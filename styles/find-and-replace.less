@@ -2,6 +2,27 @@
 
 .find-and-replace, .project-find {
     padding: 0;
+
+    .options-label {
+        .btn-toggle .btn {
+            margin-left: 8px;
+            background-color: none;
+            height: 35px;
+            border-radius: 50% !important;
+            overflow: hidden;
+            vertical-align: top;
+            border: 0;
+
+            &.selected {
+                background-color: @pink;
+            }
+
+            &:hover {
+                background-color: lighten(@gray, 20%);
+            }
+        }
+    }
+
     .input-block {
         margin-top: 20px;
         .input-block-item {
