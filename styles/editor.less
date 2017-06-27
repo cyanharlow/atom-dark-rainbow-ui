@@ -1,19 +1,15 @@
 // basic editor rules
 
 atom-text-editor {
-    background-color: @app-background-color;
 
     &.mini {
         padding: 8px 8px 8px 20px;
         background-image: none;
         border: 0 !important;
         margin: 0;
-        background-color: lighten(@app-background-color, 5%);
 
         &.is-focused {
             border: 0;
-            z-index: 99999;
-            background-color: @app-background-color;
             box-shadow: none !important;
         }
         max-height: 50px;
