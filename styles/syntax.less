@@ -20,6 +20,9 @@ span {
         color: lighten(@orange, 20%);
     }
 
+    &.syntax--arguments {
+        color: lighten(@yellow, 25%);
+    }
     &.syntax--storage {
         color: lighten(@purple, 37%);
     }
@@ -46,10 +49,17 @@ span {
     &.syntax--source.syntax--css .syntax--property-name.syntax--support,
     &.syntax--source.syntax--css .syntax--property-value.syntax--support {
         color: lighten(@gray, 70%);
+        &.syntax--property-name {
+            color: lighten(@yellow, 25%);
+        }
     }
 
     &.syntax--comment {
         color: lighten(@gray, 20%);
+    }
+
+    &.syntax--punctuation {
+        color: lighten(@gray, 80%);
     }
 
     &.leading-whitespace,
