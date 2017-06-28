@@ -15,6 +15,20 @@
         background-color: lighten(@app-background-color, 10%);
     }
 }
+
+input {
+    &.input-checkbox, &.input-radio {
+        &:checked {
+            background-color: @pink;
+        }
+    }
+}
+
+.settings-view .alert-info {
+    color: lighten(@pink, 20%);
+    border: 0;
+    background-color: darken(@pink, 55%);
+}
 body {
     font-size: @font-size;
     color: @text-color;
