@@ -2,6 +2,15 @@
 
 .btn-group {
     margin: 0;
+    > button.btn {
+        border-left: 0;
+        border-right: 0;
+        margin-left: 1px;
+        margin-right: 1px;
+        & + button.btn {
+            margin-left: 0;
+        }
+    }
 }
 
 .btn {
@@ -10,7 +19,7 @@
     border-radius: 50px;
     padding: 8px;
     color: white;
-    &:hover, &.selected, &:focus {
+    &:hover, &:focus {
         background-color: @pink;
     }
 }
