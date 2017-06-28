@@ -17,10 +17,13 @@
 }
 
 input {
-    &.input-checkbox, &.input-radio {
+    &.input-checkbox, &.input-radio, &.input-toggle{
         &:checked {
             background-color: @pink;
         }
+    }
+    &.input-range::-webkit-slider-thumb {
+        background-color: @pink;
     }
 }
 select, select.form-control {
@@ -70,7 +73,7 @@ body {
 
         }
 
-        code {
+        code, .example-code, .styleguide .example .example-code {
             background-color: lighten(@gray, 20%);
         }
 
