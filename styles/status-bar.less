@@ -52,11 +52,17 @@
                     background-color: black;
                     color: @pink;
                     cursor: pointer;
+                    &:before {
+                        background: black;
+                    }
 
                     &:hover {
                         background-color: @pink;
                         color: black;
                         outline-color: @pink;
+                        &:before {
+                            background-color: @pink;
+                        }
                     }
                 }
             }
